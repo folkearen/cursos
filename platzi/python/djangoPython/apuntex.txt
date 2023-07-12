@@ -1,0 +1,176 @@
+#Comandos
+py -m venv venv ---> entorno viratual
+activate ----> activo el entorno virtual (he creado un alias)
+pip install django -----> Instalo django en este entorno
+pip freeze >> requierement.txt ---> Guardo los paquetes modulos instalados en el entorno
+django-admin startproject premiosapp ---> inicia un proyecto en Django
+pt manage.py runserver ----> desde la carpeta del proyecto arranca el servidor
+py manage.py startapp polls ----> inicia una app
+py manage.py shell --->> activa la consola interactiva de Django
+        |
+        |_____> #manejo bbdd desde shell Django 
+        |       |   from nombreapp.models import nombredelmodelo #recordar modelo == clase
+        |       |   #crear Instancia
+        |       |   nombrevariable = nombremodelo(atributo = informacion segun tipo de dato, otro atribut)
+        |       |   nombrevariable.save()
+        |       |   #tambien puedo hacerlo en una linea
+        |       |   nombremodelo(atribut=dato).save()
+        |       |   Quetion(question_text='pregunta?', pub_date =timezone.now()).save()
+        |       |   #despues me puedo mover segun notacion puntual, ojo la variable solo dura
+        |       |   #durante la ejecucion de la shell, pero los datos persistiran en la bbdd.
+        |       |   #Si vuelvo a importar los modelos puedo consultar todos sus datos o el str que defina
+        |       |   nombremodelo.objects.all()
+        |       |   #Mas de un registro\instancia en el modelo, mostrara el str de cada uno de ellos
+        |       *
+        |_____> #para limpiar la shell django en win (linux y macOs = ctrl l)
+        |       |   import os
+        |       |   os.system('cls')
+        |       *
+        |_____> #Consultas
+        |       |   Question.objects.get(pk=1)
+        |       |   #Hace una consulta dependiendo del parametro que se indique, 
+        |       |   #en este caso el que tenga el primary key 1
+        |       |   #get solo devuelve un dato, si mas de uno coincide, arrojra una excepion
+        |       |   #get es mejor usarlo solo con busquedas de pk ya que es distinta entre todos los datos
+        |       |   #Si el parametro no existe lanza un excepcion indicandonos el problema
+        |       |   
+        |       |   Question.objects.filter(pk=1)
+        |       |   #Devuelve una respuesta pero como un iterable(lista)
+        |       |   #por tanto si puede devolver mas de una coinsidencia
+        |       |   #Si el parametro no existe, simplmente devuelve un iterable vacio QuerySet[]
+        |       |   Question.objects.filter(question_text__startswith='¿Cuál')  
+        |       |   #filtra los datos que comiencen con '¿Cuál' __atributo interno de django para consultar
+        |       |   Question.objects.filter(pub_date__year=timezone.now().year)
+        |       |   #Trae un iterable de 3 elemento que cumplen la condicion.
+        |       |   nombrevariable(que almacena el objeto obtenido con get()).nombremodel_set.all()
+        |       |      |
+        |       |      |__> #Ejemplo
+        |       |              |   q = Question.objects.get(pk=1)
+        |       |              |   q.choice_set.all() #devuelve QuerySet[]
+        |       |              |   q.choice_set.create(choice_text='Curso básico de Python', votes=0) 
+        |       |              |   #Devuelve <Choice: Curso básico de Python> ha creado una instanica 
+        |       |              |   Choice y automaticamente la vincula al elmento Question designado en q 
+        |       |              |   q.choice_set.count()
+        |       |              |   #devuleve la cantidad de elemntos dentro del set, 
+        |       |              |   #en este caso la cantidad de respuestas (instancias Choice)
+        |       |              |   #estan relacionadas a una pregunta (instancia Question)
+        |       |              |   Choice.objects.filter(question__pub_date__year=timezone.now().year)
+        |       |              |   #Devuelve las tres instancias/registros relacionados al annio actual
+        +       *              *
+
+
+
+___________________________________________
+#Mejorando la shell django
+https://espifreelancer.com/shell-plus-django.html
+py manage.py shell_plus
+OJO!
+In [1]: %load_ext autoreload
+In [2]: %autoreload 2
+autoreload es una extensión de IPython que recarga los módulos antes de ejecutar el código 
+que el usuario ingresa, lo cual permite realizar ajustes en los Models, View, ViewSet, Serializers 
+(estos últimos de Django REST) y probar los cambios sin salir del shell.
+
+_______________________________________________
+
+py manage.py makemigrations polls ---> crea una migracion una vez se han creado modelos
+crear un archivo 001_inital.py describa la creacion de las tablas en bbdd, aplica ORM 
+convierte nuestras clases a tablas que entendera la bbdd
+
+py manage.py migrate ---> migra modelos toma el archiv 001_initial.py ORM
+y lo aplica en la base de datos para crear la tabla
+
+premiosapp ====> directorio principal
+    |
+     -- premiosapp ===> paquete premiosapp. Este es la carpeta del proyecto
+    |   |
+    |   ---- urls.py
+    |           |                  
+    |           -- tiene una lista = urlpatters [path /esta tiene a polls/, path, path]
+    |                                                              |     
+    |                                                              ------------------------------------- 
+    |                                                                                                   |                        
+    |                                                                                                   |            
+    |                                                                                                   |
+    -- polls ===> una aplicacion del proyecto (recordar que un proyecto se compone de varias app)       |
+        |                                                                                               |
+        ---- urls.py <--------------------------------------Se conecta con este archivo------------------
+                        Esto quiere decir que a partir de la url polls de premiosapp
+                        premiosapp/polls/
+                        se sumaran todas las rutas propias de polls
+                        polls/a polls/b etc, pudiendo acceder a premiosapp/polls/a :)
+
+
+ORM Object Relational Mapping
+
+        como relaciono a travez de librerias y frameworks
+                                 |
+                                 | 
+                                 |
+RDB Relactional DataBase  <=================> POO Programacion Orientada a Objetos
+                        
+                        hago que se entiendan sus estructuras
+
+hacemos que las tablas <---------------------------> Clases y objetos en un archivo.py
+                               Representen como
+            Cada tabla en un archivo de py se llama model, y un model es una clase POO de py
+
+Tabla <--------------------------------------------> Clases  
+columnas <-----------------------------------------> atributos
+tipos de datos <-----------------------------------> tipos de datos primitvos y complejos (o clases int, string, hash etc)
+registro <-----------------------------------------> Instancia de clase (objeto)'
+
+RDB polls ----------> se desarrolla en el modulo models.py de la carpeta de la app polls
+_______________________  ______________________________   
+questions               | choises
+_______________________ |______________________________
+id - int pk             |id - int pk
+question_text - varchar |questions int fk id question
+pub_date - datatime     |chise_text - varchar
+                        |vote - int   
+________________________|__________________________ 
+
+
+Cuando existe una relacion uno a muchos, la tabla muchos internamente mediante el ORM en Django
+establece un conjunto dentro de la tabla de un elemento, esta relacion se crea mediante la FK
+Accedo mediante 
+nombrevariable(que almacena el objeto obtenido con get()).nombremodel_set.all()
+
+
+
+#Atributos de busqueda de Django __atributo
+
+__exact: Compara el valor exacto del campo.
+__iexact: Realiza una búsqueda insensible a mayúsculas y minúsculas del valor exacto del campo.
+__contains: Comprueba si el valor del campo contiene una subcadena determinada.
+__icontains: Realiza una búsqueda insensible a mayúsculas y minúsculas para verificar si el valor del campo contiene una subcadena determinada.
+__startswith: Verifica si el valor del campo comienza con una cadena específica.
+__istartswith: Realiza una búsqueda insensible a mayúsculas y minúsculas para verificar si el valor del campo comienza con una cadena específica.
+__endswith: Comprueba si el valor del campo termina con una cadena específica.
+__iendswith: Realiza una búsqueda insensible a mayúsculas y minúsculas para verificar si el valor del campo termina con una cadena específica.
+__in: Comprueba si el valor del campo está presente en una lista de valores.
+__gt: Verifica si el valor del campo es mayor que un valor determinado.
+__gte: Verifica si el valor del campo es mayor o igual a un valor determinado.
+__lt: Verifica si el valor del campo es menor que un valor determinado.
+__lte: Verifica si el valor del campo es menor o igual a un valor determinado.
+__range: Comprueba si el valor del campo está dentro de un rango determinado.
+__isnull: Verifica si el valor del campo es nulo (NULL).
+__regex: Realiza una búsqueda utilizando una expresión regular en el valor del campo.
+__iregex: Realiza una búsqueda utilizando una expresión regular en el valor del campo, de forma insensible a mayúsculas y minúsculas.
+__year: Compara el año de una fecha o campo de fecha y hora.
+__month: Compara el mes de una fecha o campo de fecha y hora.
+__day: Compara el día de una fecha o campo de fecha y hora.
+__week_day: Compara el día de la semana de una fecha o campo de fecha y hora.
+__hour: Compara la hora de una fecha o campo de fecha y hora.
+__minute: Compara el minuto de una fecha o campo de fecha y hora.
+__second: Compara el segundo de una fecha o campo de fecha y hora.
+__date: Compara una fecha específica con un campo de fecha y hora.
+__time: Compara una hora específica con un campo de fecha y hora.
+__year__range: Compara el año dentro de un rango específico.
+__month__range: Compara el mes dentro de un rango específico.
+__week_day__range: Compara el día de la semana dentro de un rango específico.
+__hour__range: Compara la hora dentro de un rango específico.
+__minute__range: Compara el minuto dentro de un rango específico.
+__second__range: Compara el segundo dentro de un rango específico.
+__date__range: Compara una fecha dentro de un rango específico.
+__time__range: Compara una hora dentro de un rango específico.

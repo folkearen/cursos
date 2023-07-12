@@ -1,0 +1,7 @@
+.
+├── cursos.txt
+└── cursosPlatzi
+    └── JS
+        └── basicoJavaScript
+
+3 directories, 1 file

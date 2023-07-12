@@ -1,0 +1,102 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero {
+    display: grid;
+    grid-template-columns: minmax(300px, 2fr) 3fr;
+    grid-auto-rows: 550px;
+}
+.hero__info {
+    align-self: center;
+}
+.hero__image {
+    object-fit: contain; /*ajusta los objetos a su contenedor*/
+    height: 100%;
+    width: 100%;
+}
+.info__title {
+    color: #333;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-bottom: 24px;
+}
+.info__subtitle {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+.info__button{
+    border: none;
+    border-radius: 20px;
+    background-color: #fb8c00;
+    color: #333;
+    font-weight: bolder;
+    padding: 12px 24px;
+}
+.dishes {
+     margin: 100px 0;
+}
+.dishes__title{
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.dishes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, 200px));
+    grid-template-rows: 1fr;
+    gap: 25px;
+    justify-content: center;
+}
+.dishes__item {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*cover cubre todo el contenedor*/
+}
+.dishes__item--big {
+    grid-area: 1/1/3/3;
+}
+.menu {
+    margin-bottom: 200px;
+}
+.menu__title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.menu__grid {
+    display: grid;
+    gap: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 150px);
+}
+.grid__item {
+    border-top-left-radius: 40px ; /*interesante! */
+    /* border-radius: 40px 0px 0 0; */
+    background-color: rgba(255, 182, 193, 0.3);
+    padding: 15px;
+}
+.grid__item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+@media  screen and (max-width:768px) {
+    .hero {
+        grid-template-columns: minmax(300px, 500px);
+        justify-content: center;
+    }
+    .hero__image {
+        display: none;
+    }    
+    .dishes__grid {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 100px) );
+    }
+}

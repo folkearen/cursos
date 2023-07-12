@@ -1,0 +1,9 @@
+python -m virtualenv venv
+
+pytho -m venv venv
+
+python -m(llamar al modulo) nombre del modulo nombre del entorno virtual a crar
+
+pip3 freeze > requirements.txt
+
+pip3 install -r requirements.txt

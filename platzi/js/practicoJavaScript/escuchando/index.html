@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Escuchando</h1>
+        <!-- escuchar con js, mediante algunas propiedades como onchange(ante cambios) o onclick(ante un click) ejecuta codigo JS 
+    es recomendable darle como parametro a las propiedades funciones, para acotar codigo que inseto en el html -->
+    <input type="number" id="calculo1" placeholder="Escriba un numero" onchange="console.log('se escribiro un dato')">
+    <input type="number" id="calculo2" placeholder="Escriba un numero" onchange="console.log('se escribiro un dato')">
+    <button id="btnCalcular" onclick="escuchar()">Calcular</button> <!--Aca tambien ejecuta codigo js al escuchar
+    el click, la unica diferencia es que esta resumido en una funcion que si esta escrita en JS, tambien es mala practico -->
+    <button id="btnEscuchar" onclick="console.log('Escuchando')">Escuchar</button> <!--aca ejecuta codigo js una ves 
+    cumplido el evene click no es buena practica  -->
+    <button id="btnMensaje">Ver mensaje</button>
+
+    <form id="form" action="">
+        <input type="text" id="name" placeholder="Nombre">
+        <input type="text" id="lastName" placeholder="Apellido">
+        <button>Enviar</button> 
+        <!--Cuando hablamos de formularios, su ultimo boton sera tomamdo automaticamente como de tipo submit  -->
+    </form>
+
+    <p id="result"></p>
+    <p id="mensaje"></p>
+    <p id="ident"></p>
+
+</body>
+
+   
+
+
+<script src="./script.js"></script>
+</html>

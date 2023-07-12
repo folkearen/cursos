@@ -1,0 +1,31 @@
+<form action="{% url 'polls:vote' question.id %}" method="POST">
+    {% csrf_token %} {% comment %} Esta etiqueta nos protege de atques cross site request forgery engaña a un usuario autenticado para que realice acciones no deseadas mediante el envío de peticiones maliciosas sin que se dé cuenta. {% endcomment %}
+    <fieldset>
+        <legend><h1>{{ question.question_text }}</h1></legend>
+        {% if error_message  %}
+            <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+        {% for choice in question.choice_set.all %}
+            <input 
+                type="radio"
+                name="choice"
+                id="choice{{ forloop.counter }}"  {% comment %}  forloop.counter devuelve el numero de iteracion que lleva el for{% endcomment %}
+                value="{{ choice.id }}"{% comment %} este id viene de la base de dato {% endcomment %}
+            >
+            <label for="choice{{ forloop.counter }}">
+                {{ choice.choice_text }}
+            </label>
+            <br> 
+        {% endfor %}  
+    </fieldset>
+    <input type="submit" value="Enviar">
+</form>
+
+
+{% comment %} <h1>{{ question.question_text}}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul> {% endcomment %}
+

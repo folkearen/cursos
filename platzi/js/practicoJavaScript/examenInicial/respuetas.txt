@@ -1,0 +1,130 @@
+Variables y operaciones
+
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es una variable y para qué sirve?
+
+Es representación en lenguaje humano de un espacio en la memoria ram, sirve para almacenar datos en dichos espacios y asignarles un nombre que legible y recordable por un ser humano.
+
+¿Cuál es la diferencia entre declarar e inicializar una variable?
+
+Declarar una variable refiere a asignar un nombre legible a ese espacio en memoria y reservarlo, en cuanto a inicializar, sucede cuando se le asigna un valor de información a dicho espacio en memoria. 
+
+¿Cuál es la diferencia entre sumar números y concatenar strings?
+
+La suma es un operación aritmetica que solo puede ejecutarse entre datos de tipo numérico, mientras que concatener es la unión de caracteres de tipo texto, juntar datos de tipo String.
+
+¿Cuál operador me permite sumar o concatenar?
+
+El signo aritmetico de la suma adición "+" sirve para ambas operaciones, su resulta depenmdera del tipo de datos que acompañen a este operador. 
+
+2️⃣ Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
+Nombre String
+Apellido String
+Nombre de usuario en Platzi Strin
+Edad number
+Correo electrónico  String
+Mayor de edad Boolean
+Dinero ahorrado number
+Deudas number
+
+3️⃣ Traduce a código JavaScript las variables del ejemplo anterior y deja tu código en los comentarios.
+4️⃣ Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior:
+Nombre completo (nombre y apellido)
+Dinero real (dinero ahorrado menos deudas)
+
+
+Funciones
+
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es una función?
+
+Las funciones son un conjunto de instrucciones que permite ejecutarse multiples veces sin necesidad de reescribir el mismo código.  
+
+¿Cuándo me sirve usar una función en mi código?
+
+Cuando se necesite ejecutar un bloque de código multiples veces.
+
+¿Cuál es la diferencia entre parámetros y argumentos de una función?
+
+Hablamos de parametros cuando se escribe una función, son los requisitos que exigira la función para poder ejecutarse, la idea de los parametro es exigir datos de entrada, que la función manipulará y arrojará un resultado. En cuanto a los argumentos refiere, al momento del llamado de la función, le entrega de los datos que solicita (que previamente fueron establecido como parametros).
+
+2️⃣ Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:
+
+
+Condicionales
+
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es un condicional?
+
+Los condicionales son sentencias que permitin derimir entre dos opciones, en palabras simples, estructura que permiten ejecutar diverses opciones, dependiendo si se cumple o no una condición determinada.
+
+¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+
+"if": el primer condicional, equivalente a un "si" en lenguaje humano, refiere a que si se cumple una determinada acción, que debe especificarse sitacticamente, va ejecutar determinado bloque de código.
+
+"else": este condicional entrega una opción de ejecución de bloque de código, al no cumplirse la condición descrita en el if anterior, o en los respectivos "else if" en caso de existir. Equivale aún "de lo contrario" en lenguaje humano.
+
+"else if": se sitúa luego del condicional "if" y antes de "else", su utilidad radica en el hecho de que exista más de dos posibles opciones o estados condicionales. Equivale aún "en caso de" en lenguaje humano.
+
+Estos tres pueden convinarse dentro del mismo bloque de código, habiendo un solo "if" y un solo "else", y de ser necesario varios "else if"
+
+"Swith": permite expresar una variable, y multiples opciones de en caso de cumplirse diversos casos condicionales referentes a dicha variable, los casos se expresan en una cascada, de no cumplirse el primero, pasará al segundo y así sucesivamente, en caso de no encontrar una condición que se cunmpla, se ejecutara un código por default, que tambien debe expresarse dentro del bloque switch.  
+
+
+¿Puedo combinar funciones y condicionales?
+
+Si, pueden convinarse y suele hacerse de forma recurrente. 
+
+
+2️⃣ Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if:
+3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
+💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
+
+//Ciclos
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+
+¿Qué es un ciclo?
+
+Es una estructura que se repite infinitamente hasta que se cumpla una condicion determina, en este caso se aplica a un bloque de código determinado.
+
+¿Qué tipos de ciclos existen en JavaScript?
+
+"do while", "while", "for", "for of (aplica solo array)", "for in"(aplica a array y objetos con sus propiedades y valores)
+
+¿Qué es un ciclo infinito y por qué es un problema?
+
+Un ciclo infinito es aquel cuya condicion de salida nunca se cumple, por tanto el bucle se repite infinitamente, es peligroso ya que, al no detenerse, consumira recursos del equipo de forma constante hasta saturarlo, trayendo consigo diversas consecuencias. 
+
+¿Puedo mezclar ciclos y condicionales?
+
+Efectivamente, pueden mezclarse para crear estructuras de código complejas.
+
+
+2️⃣ Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
+
+3️⃣ Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
+💡 Pista: puedes usar la función prompt de JavaScript.
+
+
+Listas 
+
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es un array?
+
+Un array es un conjunto de elemntos, que se almacenan en un solo espacio de memoria.
+
+¿Qué es un objeto?
+
+Tambien es un conjutn de elemntos que pueden almacenarse un solo espacio de memoria, sin embargo, el objeto se caracteriza por vincular una propiedad o llave a un valor, es capaz de relacionar dos elemntos entre si. 
+
+¿Cuándo es mejor usar objetos o arrays?
+
+Es mejor usar array cuando se quiere crear una lista de elementos que son independientes entre si, en cuanto al objeto, es util cuando quiero guardar elementos que guarden una relacion de llave y valor. 
+
+¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+
+Por supuesto, puego generar un array de objetos, como objetos con propiedades relacionadas a un valor de tipo lista. 
+2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
