@@ -8,6 +8,8 @@
 
 from django.http import HttpResponse #para trabajar con el objeto HttpResponse
 import datetime
+from django.template import Template, Context
+
 #Esto es una vista(basada en funciones)
 def bienvenida(request):#Pasamos un objeto de tipo request como primer argumento
     return HttpResponse('Bienvenidos a nuestro nuevo curso de Django') #Esta es una respues http
@@ -32,3 +34,23 @@ def categoriaEdad(request, edad): #recibe un variable por parametro mediante la 
 def obtenerMomentoActual(request):
     respuesta = f"<h1>Momento actual: {datetime.datetime.now().strftime('%A %d/%m/%Y %H:%M:%S')}</h1>"
     return HttpResponse(respuesta)
+
+def contenidoHtml(request, nombre, edad):
+    contenido =f"""
+    <html>
+    <body>
+        <P>Nombre: {nombre} / edad: {edad}
+    </body>
+    </html> 
+    """# Esto no es correcto, se debe optimizar usando plantillas
+    #La funcion de las plantillas es separar la parte logica(vista) de la parte visual(presentacion)
+    return HttpResponse(contenido)
+
+def miPrimeraPlantilla(request):
+    plantillaExterna = open("C:/Users/alanm/Desktop/cursos/youtubeTutoriales/Django/MiProyecto/MiProyecto/plantillas/miPrimeraPlantilla.html")
+    template = Template(plantillaExterna.read())
+    plantillaExterna.close()
+    contexto = Context() #Un objeto que permite indicar que variables, funciones, atributos va utilizar la platilla, es un contenedor para pasarle parametros
+    #renderizar el documento OJO!!! esta es una versiona larga, se puede simplificar
+    documento = template.render(contexto)
+    return HttpResponse(documento)

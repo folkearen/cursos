@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import bienvenida, bienvenidaRojo, categoriaEdad, obtenerMomentoActual #Importamos desde el archivo views la vista(def) bienvenida
+from MiProyecto.views import bienvenida, bienvenidaRojo, categoriaEdad, obtenerMomentoActual, contenidoHtml, miPrimeraPlantilla #Importamos desde el archivo views la vista(def) bienvenida
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida), #Creamos una nueva url, y la ligamos a la vista bienvenida
     path('bienvenida2/', bienvenidaRojo),
     path('categoriaEdad/<int:edad>/', categoriaEdad), #<int:edad> convierte el parametro en entero, se entrega una varibale edad de tipo entero para que la vista pueda procesarlo
-    path('obtenerMomentoActual/', obtenerMomentoActual)
+    path('obtenerMomentoActual/', obtenerMomentoActual),
+    path('contenidoHtml/<nombre>/<int:edad>', contenidoHtml), #nombre ya viene como texto asi qie no lo convertirmos, edad se convierte a int mediante int:edaddjanfgo
+    path('miPrimeraPlantilla', miPrimeraPlantilla)
 ]
