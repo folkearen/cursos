@@ -1,0 +1,31 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="create_section">
+    <div class"create_project">
+        <h1>Create project</h1>
+        <form class="create_section_form create_section_form_project" method='POST'>
+            {% comment %} <select name="test" >
+                {% for p in proj %}
+                    <option value="{{ p.id }}">{{ p.name }}</option>
+                {% endfor %}
+            </select> Probando select de maneratadicional{% endcomment %}
+            {% csrf_token %}
+            {{ form_project.as_p }}
+            <button>Save</button>
+            {% comment %} <input type="submit" value="Enviar"> {% endcomment %}
+        </form>
+    </div>
+    <div class"create_task">
+        <h1>Create task</h1>
+        <form class="create_section_form create_section_form_task" method='POST'>
+            {% csrf_token %}
+            {{ form_task.as_p }}
+            <button>Save</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+
+

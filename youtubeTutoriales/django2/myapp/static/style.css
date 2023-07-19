@@ -1,0 +1,49 @@
+body {
+    color: whitesmoke;
+    background-color: #030303;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 1rem;
+}  
+a{
+    text-decoration: none;
+}
+nav ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.card {
+    background-color: antiquewhite;
+    color: navy;
+    height: auto;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+}
+main {
+    padding: 0.5rem 6rem;
+}
+.create_section{
+   display: flex;
+   justify-content: space-around;
+} 
+.create_section_form_project {
+    height: auto;
+    align-items:center;
+    display: flex;   
+}
+.create_section_form_project button {
+    margin:  1.3rem 0 0 0.4rem;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px aqua;
+}

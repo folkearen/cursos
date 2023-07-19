@@ -1,0 +1,15 @@
+{% extends 'layout/baseOne.html' %}
+{% block main %}
+    {{ error }}
+    <h1>Sign up</h1>
+    <form class="signup_form" action="/signup/" method="POST"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Sign up</button>
+    </form>
+{% endblock main %}
+    
+{% comment %} !
+El action no es necesario si va ser servido de la misma ruta, como en este caso, lo dejaremos
+solo como referencia
+{% endcomment %}
