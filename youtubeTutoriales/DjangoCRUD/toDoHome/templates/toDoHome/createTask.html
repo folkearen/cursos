@@ -1,0 +1,12 @@
+{% extends 'layout/baseOne.html' %}
+{% block main %}
+    <h1>Task Create</h1>
+    <div>
+        <p>{{ error }}</p>
+    </div>
+    <form action="/tasks/create/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Guardar Tarea</button>
+    </form>
+{% endblock main %}

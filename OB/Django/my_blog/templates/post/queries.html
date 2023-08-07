@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exact filter</h1>
+    <ul>
+        {% for exact in exact_filter  %}
+            <li>
+                {{exact.email}}
+            </li>
+        {% endfor %}
+    </ul>    
+    <h1>Contain filters</h1>
+    <ul>
+        {% for contain in containe_filter  %}
+            <li>
+                {{contain.email}}
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Ordenado por mail desc</h1>
+    <ul>
+    {% for email in order_desc %}
+        <li>
+            {{email.email}}
+        </li>
+    {% endfor %}
+    </ul>
+    <h1>Ordenado por mail</h1>
+    <ul>
+    {% for email in order %}
+        <li>
+            {{email.email}}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h1>Limite 10 con offset 5</h1>
+    <ul>
+    {% for author in offset  %}
+        <li>{{author.email}}</li>
+    {% endfor %}
+    </ul>
+    <h1>Filtrado con llimite</h1>
+    <ul>
+    {% for author in  limit  %}
+        <li>
+            {{ author.email }}
+        </li>   
+    {% endfor %}
+     </ul>
+    <h1>Filtrando uno</h1>
+    <p>{{filone.email}}</p>
+    <p>{{filtwo.email}}</p>
+    <h1>Filtrando</h1>
+    <ul>
+    {% for filter in filtered %} 
+        <li>{{filter.email}}</li>  
+    {% endfor %}
+    </ul>
+    <h1>Todos los autores</h1>
+    <ul>
+    {% for author in authors  %}
+        <li>{{author.name}} ({{author.email}})</li>
+    {% endfor %}
+    </ul>
+    <h4>Total de autores {{ authors| length}}</h4>
+</body>
+</html>

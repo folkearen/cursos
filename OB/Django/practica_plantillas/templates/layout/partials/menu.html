@@ -1,0 +1,8 @@
+{% load static %}
+<nav>
+    <img class="logo" src=" {% static 'img/logo.png' %} " alt="logo camara fotográfica">
+    <ul>
+        <li><a href=" {% url 'index' %} ">Inicio</a></li>
+        <li><a href=" {% url 'galeria' %} ">Geleria</a></li>
+    </ul>
+</nav>

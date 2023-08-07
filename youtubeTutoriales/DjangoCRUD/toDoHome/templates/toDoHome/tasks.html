@@ -1,0 +1,11 @@
+{% extends 'layout/baseOne.html' %}
+{% block main %}
+    <h1>Task</h1>
+    {% for task in tasks  %}
+        <div>
+            <h2>{{task.title}}</h2>
+            <p>{{task.description}}</p>
+            <p>{{task.user.username}}</p>
+        </div>
+    {% endfor %}
+{% endblock main %}

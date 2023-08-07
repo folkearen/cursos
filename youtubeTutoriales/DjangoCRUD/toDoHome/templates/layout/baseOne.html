@@ -9,7 +9,19 @@
 </head>
 <body>
     <header>
-        <p>This is header</p>
+        <nav>
+            <ul>
+                <li><a href="{% url 'toDoHome:home' %}">Home</a></li>
+                <li><a href="{% url 'toDoHome:tasks' %}">Task</a></li>
+                {% comment %} Django genera una variable global user con la cual podemos acceder desde cualquier {% endcomment %}
+                {% if user.is_authenticated %} 
+                    <li><a href=" {% url 'toDoHome:signout' %} ">Logaout</a></li>
+                {% else %}
+                    <li><a href="{% url 'toDoHome:signUp' %}">Sign up</a></li>
+                    <li><a href="{% url 'toDoHome:signin' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
     <main>
         {% block main %}

@@ -1,0 +1,108 @@
+:root {
+    --color-primary:#ffce00;
+    --color-secondary:#ffa300;
+    --color-text:#707789;
+    --color-bg:#dedede;
+    --font-title: fresh;
+    --font-text: cafe;
+}
+
+*{      
+    box-sizing: border-box;
+    font-family: var(--font-text);
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-text);
+    font-family: var(--font-title);
+}
+.logo {
+    height: 50px;
+    margin: 25px;
+    width: 50px;
+}
+nav {
+    align-items: center;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100vw;
+}
+nav ul {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    list-style: none;
+}
+nav ul li {
+    padding: 20px;
+
+}
+nav ul li a {
+    color: var(--color-text);
+    font-family: var(--font-title);
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: white;
+}
+main {
+    align-items: center;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding: 50px;
+    width: 100vw;
+}
+.about {
+    display: flex;
+    padding: 25px
+
+}
+.about_content {
+    padding: 50px;
+    width: 350px;
+}
+.galery {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+footer {
+    align-items: center;
+    background-color: var(--color-text);
+    display: flex;
+    justify-content: space-around;
+    min-height: 150px;
+    width: 100vw;
+}
+
+footer img {
+    height: 100px;
+    margin: 25px;
+    width: 100px;
+}
+footer ul {
+    list-style: none;
+}
+footer ul li a{
+    color: var(--color-bg);
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: fresh;
+    src: url('../fonts/Fresh.ttf');
+}
+@font-face {
+    font-family: cafe;
+    src: url('../fonts/CAFETA__.TTF');
+}
