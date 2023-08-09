@@ -1,3 +1,13 @@
-site 2 url
-primera imagen nuestra con nuestra info
-segunda lista de imagen que parezca porfolio fotografico
+Practica
+
+Desaroollador Backend
+Softtware de gestionpar una multinacional
+
+LLevar control de empleados
+Una app django
+Control de puestos de trabajo y salario asociado
+Control de las ubicaciones de cada fabrica
+
+Una app django
+
+Planificar antes de codificar.
