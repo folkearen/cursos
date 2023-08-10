@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+    <h1>Registro de usuarios</h1>
+    <br>
+    {% if errors %}
+     {{ errors.items  }}
+      {% for field, error_list in errors.items %}
+        {{ error_list }}
+      {% endfor %}
+  {% endif %}
+ 
+
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <div class="card mx-auto" style="width: 30rem;">
+            <div class="card-body">
+              <h5 class="card-title">Complete todos los campos</h5>
+              {{ form | crispy}}
+
+              <a href="{% url 'home' %}" class="card-link">Inicio</a>
+              <a href=" {% url 'login' %} " class="card-link">Iniciar sesión</a>
+              <button type='submit' class='btn btn-sm btn-primary float-end'>Registrase</button>
+            </div>
+          </div>
+    </form>
+
+{% endblock content %}

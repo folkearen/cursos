@@ -1,0 +1,7 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <h3>Inicio</h3>
+    {% if user.is_authenticated %}
+        <h5>Bienvenido {{ user.first_name | upper }}</h5>
+    {% endif %}
+{% endblock content %}
