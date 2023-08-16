@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% block title %} Contactos {% endblock title %}
+
+{% block content %}
+    <form class="search" action=" {% url 'contact' %} " method="GET">
+        <input class='search_bar' type="text" name='search' placeholder='Buscar contacto...'>
+        <input class='btn btn-search' type="submit" value="Buscar">
+    </form>
+    <span class="aux_btns"><a href="{% url 'contact' %}">Ver todos</a> <a href=" {% url 'contact_create' %} ">Añadir</a></span>
+    {% include 'contact/by_inicial.html' %}
+    <ul class='list'>
+        {% for contact in contacts  %}
+            <li>
+                {{ contact }} 
+                <span>
+                    <a class="btn btn-details" href=" {% url 'contact_view' contact.id %} ">Ver</a>
+                    <a class="btn btn-edit" href=" {% url 'contact_edit' contact.id %} ">Editar</a>
+                    <a class="btn btn-delete" href=" {% url 'contact_delete' contact.id %} ">Borrar</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+{% comment %} !dasdjaskljdklsa {% endcomment %}
+{% comment %} ?dsadasdasdsa {% endcomment %}
+{% comment %} TODO dsadasdasdsa {% endcomment %}
+{% comment %} * dsadasdasdsa {% endcomment %}

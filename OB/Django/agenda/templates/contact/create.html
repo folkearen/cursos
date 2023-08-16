@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %} Contacto {{ contact.name }} {% endblock title %}
+{% block style %}
+ <link rel="stylesheet" href=" {% static 'css/forms.css' %} ">
+{% endblock style %}
+{% block content %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <span class="aux_btns aux_btns_create"><a href="{% url 'contact' %}">Volver atrás</a></span>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <div class='btn-wrapper'>
+            <input class='btn-change-send' type="submit" value="Guardar cambios">
+        </div>
+    </form>    
+{% endblock content %}

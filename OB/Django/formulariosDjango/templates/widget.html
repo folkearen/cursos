@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=foff, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %} 
+        {% if errors %}
+            {% for e, error in errors.items  %}
+            {{error}}
+            {% endfor %}
+            
+        {% endif %}
+        {{ form.as_p }}
+        <input type="submit" value='Enviar'>
+        
+    </form>
+</body>
+</html>

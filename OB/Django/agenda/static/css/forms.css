@@ -1,0 +1,27 @@
+input {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--color-text);
+    padding: 5px;
+    width: 100%;
+}
+.btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.btn-change-send {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 5px;
+    width: 77%;
+}
+.btn-change-send:hover {
+    background-color: white;
+    color: var(--color-primary);
+    cursor: pointer;
+} 
+.aux_btns_create {
+    justify-content: center;
+}

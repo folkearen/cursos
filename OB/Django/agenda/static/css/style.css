@@ -1,0 +1,122 @@
+:root {
+    --color-primary: #2ea3f2;
+    /* --color-secondary: ; */
+    --color-text: #666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-primary);
+}
+
+nav {
+    align-items: center;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100vw;
+}
+nav ul {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 90vw;
+}
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+}
+nav ul li a:hover {
+    color: var(--color-text);
+} 
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 50px;
+    width: 100vw;
+}
+.list {
+    border: 1px solid var(--color-text);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 50%;
+}
+.list li {
+    align-items: centera;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-text);
+    padding: 15px;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    width: 70px;
+}
+.btn:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+.btn-details{
+    background-color: var(--color-primary);
+}
+.btn-edit {
+    background-color:#ffcc00;
+}
+.btn-delete {
+    background-color: red;
+}
+.search {
+    margin: 20px;
+    width: 50%;
+}
+.search_bar {
+    padding: 7px;
+    width: 85%;
+}
+.btn-search {
+    background-color: var(--color-primary);
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+    width: 14%;
+}
+.btn-search:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+.aux_btns {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    width: 50%;
+}
+.aux_btns a{
+    text-decoration: none;
+    padding-right: 10px;
+}
+/* ? sdjskajdklsa */
+/* *sadasdasd */
+/* TODO: jdaskljdlksajdlsa */
+/* ! sjkdsjkadkasld */
