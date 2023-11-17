@@ -1,0 +1,163 @@
+.user_manager_body {
+    background-color: transparent;
+}
+a {
+    color: #16b8f3;;
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+}
+.forms_style {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    padding: 2rem;
+    width: 90%;
+    overflow: hidden;
+   
+}
+
+.forms_style label {
+    margin-bottom: 0.4rem;
+    width: 100%;
+}
+.forms_style input, .forms_style textarea, .forms_style select{ 
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border: 1px solid rgba(255,255,255, 0.5);
+    border-right: 1px solid rgba(255,255,255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: rgba(240, 248, 255,0.8);
+    display: block;
+    letter-spacing: 1px;
+    outline: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.forms_style input[type="date"] {
+    width: 20%;      
+}
+.aux_data_input_design input[type="date"] {
+    width: 50%;
+}
+
+.aux_data_input_design select {
+    width: 50%;
+}
+.forms_style input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    
+}
+.forms_style select {
+    margin: 0;
+}
+.forms_style option {
+    background: none;
+    background-color: #687f89;
+    color: rgba(240, 248, 255,0.8);
+    font-weight: bold;
+}
+.forms_style input::placeholder {
+    color: rgba(240, 248, 255,0.5);
+    
+}
+.forms_style_alert {
+    border: yellow solid 1px;
+}
+
+.user_manager_body::-webkit-scrollbar {
+    display: none;
+
+}
+.btn_form {
+    background-color: rgba(255,255,255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255, 0.5);
+    border-right: 1px solid rgba(255,255,255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    color: white;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+
+}
+.btn_form:hover  {
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.btn_form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: rgba(255,255,255, 0.3);
+    transform: skewX(45deg) translateX(1950px);
+    transition: 0.7s;
+    -webkit-transform: skewX(45deg) translateX(1950px);
+    -moz-transform: skewX(45deg) translateX(1950px);
+    -ms-transform: skewX(45deg) translateX(1950px);
+    -o-transform: skewX(45deg) translateX(1950px);
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+.btn_form:hover::before {
+    transform: skewX(45deg) translateX(-140px);
+    -webkit-transform: skewX(45deg) translateX(-140px);
+    -moz-transform: skewX(45deg) translateX(-140px);
+    -ms-transform: skewX(45deg) translateX(-140px);
+    -o-transform: skewX(45deg) translateX(-140px);
+}
+.btn_form_alert {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+.title_modal_custom {
+    color: white;
+    position: relative;
+    text-align: star;
+    padding-top: 2rem;
+}
+.title_modal_custom::before {
+    content: '';
+    background: white;
+    bottom: -10px;
+    left: 0;
+    height: 4px;
+    position: absolute;
+    width: 140px;
+}
+.list_error_container {
+    color: white;
+}
+.list_error_container ul li{
+    color: white;
+}
+
+
+
+/* .btn_form {
+    background-color:#16b8f3;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+
+}
+.btn_form:hover {
+    background-color: orange;
+} */

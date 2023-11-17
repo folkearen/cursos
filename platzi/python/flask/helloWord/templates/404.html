@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block ttitle %}
+    {{super()}}
+    404
+{% endblock ttitle %}
+    
+{% block main %}
+    <h1>Oli soy un 404</h1>
+    <p>{{error}}</p>
+{% endblock main %}

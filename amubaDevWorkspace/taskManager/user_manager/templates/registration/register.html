@@ -1,0 +1,21 @@
+{% extends 'task/layout/base.html' %}
+{% load static %}
+{% block header %}
+    <a  href=" {% url 'home' %} "><img class="shape_nav" src=" {% static 'task/img/back.svg' %} " alt=""></a>
+{% endblock header %}
+{% block main %}
+<h2 class="modal-title title_modal_custom mb-4" id="exampleModalLabel">Crear cuenta</h2>
+    <form class="forms_style" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit" class="btn_form">Registrarse</button>
+    </form>
+    {% if errors %}
+    <div class="list_error_container">
+        <h4>Vuelva ingresar los datos</h4>
+        {% for fields, error_list in errors.items  %}
+            {{error_list}}
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock main %}

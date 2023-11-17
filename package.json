@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "tar": "^4.4.13"
+  },
+  "devDependencies": {
+    "rollup": "^4.4.0"
+  }
+}

@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% import 'macros.html' as macro %}
+
+
+{% block title %}{{ super() }}  Bienvenida{% endblock title %} 
+
+<!--super() extiende el contenido situado en el mismo bloque pero del template que extiende, suma los contenidos  -->
+{% block main %}
+    {{super()}}
+    {% if user_ip %}
+    <h1>Mostrando template con flask {{ user_ip }}</h1>
+    {% else %}
+    <a href=" {{ url_for("index") }} ">Ir a inicio</a>
+    {% endif %}
+
+    <ul>
+    {% for todo in todos  %}
+       {{macro.render_todo(todo)}}
+    {% endfor %}
+    </ul>
+    <div>
+        <form action="{{ url_for('hello')}}" method="POST">
+            {{ login_form }}
+        </form>
+    </div>
+    {{ app }}
+{% endblock main %}
+
